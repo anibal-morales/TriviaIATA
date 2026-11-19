@@ -1,0 +1,205 @@
+:root {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent: #38bdf8;
+  --accent-hover: #0284c7;
+  --success-bg: rgba(34, 197, 94, 0.15);
+  --success-text: #4ade80;
+  --error-bg: rgba(239, 68, 68, 0.15);
+  --error-text: #f87171;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 460px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.header h1 {
+  font-size: 1.4rem;
+  letter-spacing: -0.5px;
+}
+
+.scoreboard {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.scoreboard strong {
+  color: var(--accent);
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.prompt {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.iata-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: 0.35rem;
+  background-color: #0b1120;
+  color: #facc15; /* Amarillo estilo tablero de aeropuerto */
+  border: 2px solid #334155;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  user-select: none;
+}
+
+#trivia-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+#answer-input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #475569;
+  background-color: #0f172a;
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#answer-input:focus {
+  border-color: var(--accent);
+}
+
+#answer-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button {
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+#submit-btn {
+  background-color: var(--accent);
+  color: #0f172a;
+}
+
+#submit-btn:hover {
+  background-color: var(--accent-hover);
+  color: #ffffff;
+}
+
+.feedback {
+  margin-top: 1.25rem;
+  padding: 0.85rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feedback.correct {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+.feedback.incorrect {
+  background-color: var(--error-bg);
+  color: var(--error-text);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+.next-btn {
+  margin-top: 1rem;
+  width: 100%;
+  background-color: #334155;
+  color: var(--text-main);
+}
+
+.next-btn:hover {
+  background-color: #475569;
+}
+
+.hidden {
+  display: none;
+}
+
+.timer-warning {
+  color: var(--error-text) !important;
+}
+
+.timer-bar-track {
+  width: 100%;
+  height: 8px;
+  background-color: #0b1120;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  border: 1px solid #334155;
+}
+
+.timer-bar-fill {
+  height: 100%;
+  width: 100%;
+  background-color: var(--accent);
+  transition: width 0.25s linear, background-color 0.25s ease;
+}
+
+.timer-bar-fill.warning {
+  background-color: var(--error-text);
+}
