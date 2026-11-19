@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IATA Trivia - Adivina el Aeropuerto</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>✈️ IATA Trivia</h1>
+            <div class="scoreboard">
+                <span>Tiempo: <strong id="timer">10s</strong></span>
+                <span>Puntaje: <strong id="score">0</strong></span>
+                <span>Racha: <strong id="streak">0</strong></span>
+            </div>
+    </header>
+
+    <section class="card">
+        <div class="timer-bar-track" aria-hidden="true">
+           <div id="timer-bar" class="timer-bar-fill"></div>
+        </div>
+      <p class="prompt">¿De que aeropuerto es este codigo?</p>
+      
+      
+      <!-- Aquí se mostrará el código IATA dinámicamente -->
+
+      <div class="iata-display" id="iata-code">EZE</div>
+
+      <form id="trivia-form" autocomplete="off">
+        <input
+          type="text"
+          id="answer-input"
+          placeholder="Escribe la ciudad (ej. Buenos Aires)..."
+          required
+          autofocus
+        />
+        <button type="submit" id="submit-btn">Comprobar</button>
+      </form>
+
+      <!-- Zona de feedback (clases 'correct' o 'incorrect' se agregarán con JS) -->
+      <div id="feedback" class="feedback" aria-live="polite"></div>
+
+      <button type="button" id="next-btn" class="next-btn hidden">
+        Siguiente aeropuerto →
+      </button>
+    </section>
+  </main>
+
+  <!-- Dejamos listo el enlace para el siguiente paso -->
+  <script src="airports.js"></script>
+  <script src="app.js"></script>
+  
+</body>
+</html>
